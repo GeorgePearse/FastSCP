@@ -2,6 +2,8 @@
 
 Fast and efficient copy-paste augmentation for computer vision, with support for both bounding box and precise segmentation-based object placement.
 
+<img width="1339" alt="image" src="https://github.com/user-attachments/assets/b4d97f12-ebca-4587-a0ed-ce17d4ec0687" />
+
 ## Features
 
 - 🚀 **Fast**: Sub-millisecond augmentation times (avg ~0.3ms for bbox, ~8ms for segmentation)
