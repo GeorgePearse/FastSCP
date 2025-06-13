@@ -1,8 +1,8 @@
 # Sprint 001 Completion Summary
 
-**Sprint Name**: Core Implementation  
-**Completion Date**: 2025-01-13  
-**Duration**: 1 day  
+**Sprint Name**: Core Implementation
+**Completion Date**: 2025-01-13
+**Duration**: 1 day
 
 ## Accomplishments
 

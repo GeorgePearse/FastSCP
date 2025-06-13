@@ -1,0 +1,33 @@
+[tool.pyright]
+include = ["fastscp", "tests", "examples"]
+exclude = ["**/node_modules", "**/__pycache__", "**/.*", "build", "dist"]
+typeCheckingMode = "strict"
+pythonVersion = "3.8"
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportOptionalSubscript = false
+reportOptionalMemberAccess = false
+reportOptionalCall = false
+reportOptionalIterable = false
+reportOptionalContextManager = false
+reportOptionalOperand = false
+reportTypedDictNotRequiredAccess = false
+reportImportCycles = true
+reportPrivateImportUsage = false
+reportUnnecessaryIsInstance = false
+reportUnnecessaryComparison = true
+reportUnnecessaryCast = true
+reportImplicitStringConcatenation = false
+reportUnusedImport = true
+reportUnusedClass = true
+reportUnusedFunction = true
+reportUnusedVariable = true
+reportDuplicateImport = true
+reportAssertAlwaysTrue = true
+reportUnnecessaryTypeIgnoreComment = true
+reportShadowedImports = true
+
+[tool.ty]
+pyright = true
+mypy = false
+ruff = false

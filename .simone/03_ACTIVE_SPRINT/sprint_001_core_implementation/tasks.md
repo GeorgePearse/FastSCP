@@ -1,9 +1,9 @@
 # Sprint 001 Tasks
 
 ## Task 1: Project Setup
-**Status**: 🔴 Not Started  
-**Assignee**: Developer  
-**Priority**: High  
+**Status**: 🔴 Not Started
+**Assignee**: Developer
+**Priority**: High
 **Estimated Time**: 1 hour
 
 ### Subtasks:
@@ -21,9 +21,9 @@
 ---
 
 ## Task 2: Test Data Generation Utilities
-**Status**: 🔴 Not Started  
-**Assignee**: Developer  
-**Priority**: High  
+**Status**: 🔴 Not Started
+**Assignee**: Developer
+**Priority**: High
 **Estimated Time**: 3 hours
 
 ### Subtasks:
@@ -42,9 +42,9 @@
 ---
 
 ## Task 3: Basic COCO Loader
-**Status**: 🔴 Not Started  
-**Assignee**: Developer  
-**Priority**: High  
+**Status**: 🔴 Not Started
+**Assignee**: Developer
+**Priority**: High
 **Estimated Time**: 4 hours
 
 ### Subtasks:
@@ -63,9 +63,9 @@
 ---
 
 ## Task 4: SimpleCopyPaste Transform (MVP)
-**Status**: 🔴 Not Started  
-**Assignee**: Developer  
-**Priority**: High  
+**Status**: 🔴 Not Started
+**Assignee**: Developer
+**Priority**: High
 **Estimated Time**: 4 hours
 
 ### Subtasks:
@@ -84,9 +84,9 @@
 ---
 
 ## Task 5: Core Test Suite
-**Status**: 🔴 Not Started  
-**Assignee**: Developer  
-**Priority**: Medium  
+**Status**: 🔴 Not Started
+**Assignee**: Developer
+**Priority**: Medium
 **Estimated Time**: 3 hours
 
 ### Subtasks:

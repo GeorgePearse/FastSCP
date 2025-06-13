@@ -4,14 +4,17 @@ import json
 from pathlib import Path
 
 
-def create_html_viewer(metadata_file="transformation_samples/metadata.json", output_file="transformation_viewer.html"):
+def create_html_viewer(
+    metadata_file="transformation_samples/metadata.json",
+    output_file="transformation_viewer.html",
+):
     """Create an HTML file to view the transformations."""
-    
+
     # Load metadata
     metadata_path = Path(metadata_file)
     with open(metadata_path) as f:
         metadata = json.load(f)
-    
+
     # Group by original
     groups = {}
     for sample in metadata["samples"]:
@@ -21,10 +24,10 @@ def create_html_viewer(metadata_file="transformation_samples/metadata.json", out
                 "original": orig,
                 "transforms": [],
                 "config": sample["config"],
-                "background": sample["background"]
+                "background": sample["background"],
             }
         groups[orig]["transforms"].append(sample)
-    
+
     # Generate HTML
     html = """<!DOCTYPE html>
 <html>
@@ -101,29 +104,30 @@ def create_html_viewer(metadata_file="transformation_samples/metadata.json", out
 </head>
 <body>
     <h1>FastSCP Transformation Viewer</h1>
-    
+
     <div class="overview">
         <h2>Transformation Overview</h2>
         <img src="transformation_samples/transformation_grid.jpg" alt="Transformation Grid">
-        
+
         <h2>Before/After Comparisons</h2>
         <img src="transformation_samples/before_after_comparisons.jpg" alt="Before/After Comparisons">
     </div>
-    
+
     <div class="stats">
         <h3>Performance Statistics</h3>
         <p>Average transformation time: <span class="performance">{:.2f} ms</span></p>
         <p>Total samples generated: {}</p>
         <p>Created: {}</p>
     </div>
-    
+
     <h2>Individual Samples</h2>
 """.format(
-        sum(s["transform_time_ms"] for s in metadata["samples"]) / len(metadata["samples"]),
+        sum(s["transform_time_ms"] for s in metadata["samples"])
+        / len(metadata["samples"]),
         len(metadata["samples"]),
-        metadata["created"]
+        metadata["created"],
     )
-    
+
     # Add each sample group
     for orig_file, group in groups.items():
         html += f"""
@@ -131,14 +135,14 @@ def create_html_viewer(metadata_file="transformation_samples/metadata.json", out
         <div class="sample-header">{group['config']} - {group['background']} background</div>
         <div class="metadata">
 """
-        
+
         # Add metadata from first transform
         if group["transforms"]:
             t = group["transforms"][0]
             html += f"<strong>Objects:</strong> {', '.join(f'{k}: {v}' for k, v in t['object_counts'].items())}<br>"
             html += f"<strong>Blend Mode:</strong> {t['blend_mode']}<br>"
             html += f"<strong>Scale Range:</strong> {t['scale_range']}<br>"
-        
+
         html += """
         </div>
         <div class="images">
@@ -147,7 +151,7 @@ def create_html_viewer(metadata_file="transformation_samples/metadata.json", out
                 <div class="image-label">Original</div>
             </div>
 """.format(orig_file)
-        
+
         # Add transformed versions
         for t in group["transforms"]:
             html += """
@@ -156,40 +160,41 @@ def create_html_viewer(metadata_file="transformation_samples/metadata.json", out
                 <div class="image-label">Variant {} ({:.2f} ms)</div>
             </div>
 """.format(t["transformed"], t["variation"], t["transform_time_ms"])
-        
+
         html += """
         </div>
     </div>
 """
-    
+
     html += """
 </body>
 </html>
 """
-    
+
     # Save HTML
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         f.write(html)
-    
+
     print(f"HTML viewer created: {output_file}")
-    print(f"Open this file in your browser to view the transformations!")
+    print("Open this file in your browser to view the transformations!")
 
 
 def main():
     """Main function."""
     print("Creating HTML viewer for FastSCP transformations...")
-    
+
     # Check if samples exist
     if not Path("transformation_samples/metadata.json").exists():
         print("\nNo transformation samples found.")
         print("Please run 'python visualize_simple.py' first.")
         return
-    
+
     create_html_viewer()
-    
+
     # Try to open in browser
     import webbrowser
     import os
+
     file_path = os.path.abspath("transformation_viewer.html")
     webbrowser.open(f"file://{file_path}")
 
