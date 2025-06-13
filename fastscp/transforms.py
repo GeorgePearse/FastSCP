@@ -48,7 +48,7 @@ class SimpleCopyPaste(ImageOnlyTransform):
     ):
         super().__init__(always_apply=always_apply, p=p)
 
-        self.coco_loader = COCOLoaderSegmented(coco_file, image_dir)
+        self.coco_loader = COCOLoader(coco_file, image_dir)
         self.object_counts = object_counts
         self.blend_mode = blend_mode
         self.scale_range = scale_range
