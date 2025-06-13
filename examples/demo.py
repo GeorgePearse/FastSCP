@@ -12,7 +12,7 @@ import sys
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from fastscp import SimpleCopyPasteSegmented
+from fastscp import SimpleCopyPaste
 from tests.data_generator import TestDataGenerator
 
 
@@ -27,15 +27,15 @@ def ensure_test_data():
 
 
 def main():
-    """Run demo of SimpleCopyPasteSegmented transform."""
+    """Run demo of SimpleCopyPaste transform."""
     print("FastSCP Demo\n" + "=" * 50)
 
     # Ensure test data exists
     data_dir = ensure_test_data()
 
     # Create transform
-    print("\n1. Creating SimpleCopyPasteSegmented transform...")
-    transform = SimpleCopyPasteSegmented(
+    print("\n1. Creating SimpleCopyPaste transform...")
+    transform = SimpleCopyPaste(
         coco_file=str(data_dir / "annotations.json"),
         object_counts={"rectangle": 3, "circle": 2, "triangle": 1},
         blend_mode="overlay",
@@ -74,7 +74,7 @@ def main():
     pipeline = A.Compose(
         [
             A.RandomBrightnessContrast(brightness_limit=0.1, contrast_limit=0.1, p=0.5),
-            SimpleCopyPasteSegmented(
+            SimpleCopyPaste(
                 coco_file=str(data_dir / "annotations.json"),
                 object_counts={"rectangle": 2, "circle": 2},
                 blend_mode="mix",

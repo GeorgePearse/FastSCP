@@ -88,7 +88,8 @@ class TestDataGenerator:
 
     def generate_random_color(self) -> Tuple[int, int, int]:
         """Generate a random RGB color."""
-        return tuple(int(x) for x in np.random.randint(50, 255, 3))
+        values = np.random.randint(50, 255, 3)
+        return int(values[0]), int(values[1]), int(values[2])
 
     def create_shape_annotation(
         self, shape_type: str, bbox: List[int], image_id: int
@@ -97,7 +98,18 @@ class TestDataGenerator:
         x, y, w, h = bbox
 
         # Simple segmentation (rectangle outline)
-        segmentation = [[x, y, x + w, y, x + w, y + h, x, y + h]]
+        segmentation = [
+            [
+                float(x),
+                float(y),
+                float(x + w),
+                float(y),
+                float(x + w),
+                float(y + h),
+                float(x),
+                float(y + h),
+            ]
+        ]
 
         # Map shape type to category ID
         category_map = {"rectangle": 1, "circle": 2, "triangle": 3}

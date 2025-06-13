@@ -2,10 +2,10 @@
 
 __version__ = "0.1.0"
 
-from .transforms_segmented import SimpleCopyPasteSegmented
-from .coco_loader_segmented import COCOLoaderSegmented
+from .transforms import SimpleCopyPaste
+from .coco_loader import COCOLoader
 
 __all__ = [
-    "SimpleCopyPasteSegmented",
-    "COCOLoaderSegmented",
+    "SimpleCopyPaste",
+    "COCOLoader",
 ]

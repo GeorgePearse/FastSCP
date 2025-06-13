@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-from fastscp.coco_loader_segmented import COCOLoaderSegmented
+from fastscp.coco_loader import COCOLoader
 from tests.data_generator import TestDataGenerator
 
 
@@ -20,11 +20,11 @@ def test_dataset(tmp_path):
 
 
 class TestCOCOLoaderInit:
-    """Test COCOLoaderSegmented initialization."""
+    """Test COCOLoader initialization."""
 
     def test_init_success(self, test_dataset):
         """Test successful initialization."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         assert loader.annotation_file.exists()
         assert loader.image_dir.exists()
@@ -34,7 +34,7 @@ class TestCOCOLoaderInit:
 
     def test_init_with_custom_image_dir(self, test_dataset):
         """Test initialization with custom image directory."""
-        loader = COCOLoaderSegmented(
+        loader = COCOLoader(
             test_dataset["annotation_file"], image_dir=test_dataset["image_dir"]
         )
 
@@ -43,7 +43,7 @@ class TestCOCOLoaderInit:
     def test_init_missing_annotation_file(self):
         """Test initialization with missing annotation file."""
         with pytest.raises(FileNotFoundError, match="Annotation file not found"):
-            COCOLoaderSegmented("nonexistent.json")
+            COCOLoader("nonexistent.json")
 
     def test_init_missing_image_dir(self, tmp_path):
         """Test initialization with missing image directory."""
@@ -52,15 +52,15 @@ class TestCOCOLoaderInit:
         ann_file.write_text("{}")
 
         with pytest.raises(FileNotFoundError, match="Image directory not found"):
-            COCOLoaderSegmented(str(ann_file))
+            COCOLoader(str(ann_file))
 
 
 class TestCOCOLoaderMethods:
-    """Test COCOLoaderSegmented methods."""
+    """Test COCOLoader methods."""
 
     def test_get_category_id(self, test_dataset):
         """Test category ID lookup."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         assert loader.get_category_id("rectangle") == 1
         assert loader.get_category_id("circle") == 2
@@ -69,7 +69,7 @@ class TestCOCOLoaderMethods:
 
     def test_load_object_crop(self, test_dataset):
         """Test loading object crop."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         # Get first annotation ID
         ann_id = list(loader.coco.anns.keys())[0]
@@ -88,14 +88,14 @@ class TestCOCOLoaderMethods:
 
     def test_load_object_crop_invalid_id(self, test_dataset):
         """Test loading with invalid annotation ID."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         crop = loader.load_object_crop(99999)
         assert crop is None
 
     def test_get_random_objects(self, test_dataset):
         """Test getting random objects by category."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         # Get rectangles
         rectangles = loader.get_random_objects("rectangle", count=2)
@@ -109,7 +109,7 @@ class TestCOCOLoaderMethods:
 
     def test_get_all_categories(self, test_dataset):
         """Test getting all categories."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         categories = loader.get_all_categories()
 
@@ -120,7 +120,7 @@ class TestCOCOLoaderMethods:
 
     def test_get_annotation_count(self, test_dataset):
         """Test annotation counting."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
         dataset = test_dataset["dataset"]
 
         # Total count
@@ -141,7 +141,7 @@ class TestCOCOLoaderCache:
 
     def test_cache_reuse(self, test_dataset):
         """Test that cached objects are reused."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"], cache_size=10)
+        loader = COCOLoader(test_dataset["annotation_file"], cache_size=10)
 
         ann_id = list(loader.coco.anns.keys())[0]
 
@@ -158,7 +158,7 @@ class TestCOCOLoaderCache:
 
     def test_cache_eviction(self, test_dataset):
         """Test LRU cache eviction."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"], cache_size=2)
+        loader = COCOLoader(test_dataset["annotation_file"], cache_size=2)
 
         ann_ids = list(loader.coco.anns.keys())[:3]
 
@@ -174,7 +174,7 @@ class TestCOCOLoaderCache:
 
     def test_clear_cache(self, test_dataset):
         """Test cache clearing."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"])
+        loader = COCOLoader(test_dataset["annotation_file"])
 
         # Load some objects
         ann_id = list(loader.coco.anns.keys())[0]
@@ -190,7 +190,7 @@ class TestCOCOLoaderCache:
 
     def test_get_cache_info(self, test_dataset):
         """Test cache info retrieval."""
-        loader = COCOLoaderSegmented(test_dataset["annotation_file"], cache_size=100)
+        loader = COCOLoader(test_dataset["annotation_file"], cache_size=100)
 
         info = loader.get_cache_info()
 
