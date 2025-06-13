@@ -1,0 +1,329 @@
+{
+  "created": "2025-06-13T17:31:10.435608",
+  "samples": [
+    {
+      "index": 0,
+      "original": "sample_000_original_gray.jpg",
+      "transformed": "sample_000_transformed_gray_v1.jpg",
+      "background": "gray",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.8540153503417969,
+      "variation": 1
+    },
+    {
+      "index": 0,
+      "original": "sample_000_original_gray.jpg",
+      "transformed": "sample_000_transformed_gray_v2.jpg",
+      "background": "gray",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.2028942108154297,
+      "variation": 2
+    },
+    {
+      "index": 0,
+      "original": "sample_000_original_gray.jpg",
+      "transformed": "sample_000_transformed_gray_v3.jpg",
+      "background": "gray",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.34308433532714844,
+      "variation": 3
+    },
+    {
+      "index": 1,
+      "original": "sample_001_original_gradient.jpg",
+      "transformed": "sample_001_transformed_gradient_v1.jpg",
+      "background": "gradient",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.1780986785888672,
+      "variation": 1
+    },
+    {
+      "index": 1,
+      "original": "sample_001_original_gradient.jpg",
+      "transformed": "sample_001_transformed_gradient_v2.jpg",
+      "background": "gradient",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.28514862060546875,
+      "variation": 2
+    },
+    {
+      "index": 1,
+      "original": "sample_001_original_gradient.jpg",
+      "transformed": "sample_001_transformed_gradient_v3.jpg",
+      "background": "gradient",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.17309188842773438,
+      "variation": 3
+    },
+    {
+      "index": 2,
+      "original": "sample_002_original_grid.jpg",
+      "transformed": "sample_002_transformed_grid_v1.jpg",
+      "background": "grid",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.3261566162109375,
+      "variation": 1
+    },
+    {
+      "index": 2,
+      "original": "sample_002_original_grid.jpg",
+      "transformed": "sample_002_transformed_grid_v2.jpg",
+      "background": "grid",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.28705596923828125,
+      "variation": 2
+    },
+    {
+      "index": 2,
+      "original": "sample_002_original_grid.jpg",
+      "transformed": "sample_002_transformed_grid_v3.jpg",
+      "background": "grid",
+      "config": "Basic (2 red, 1 green)",
+      "object_counts": {
+        "red_square": 2,
+        "green_circle": 1
+      },
+      "blend_mode": "overlay",
+      "scale_range": [
+        0.8,
+        1.2
+      ],
+      "transform_time_ms": 0.13685226440429688,
+      "variation": 3
+    },
+    {
+      "index": 3,
+      "original": "sample_003_original_gray.jpg",
+      "transformed": "sample_003_transformed_gray_v1.jpg",
+      "background": "gray",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.6840229034423828,
+      "variation": 1
+    },
+    {
+      "index": 3,
+      "original": "sample_003_original_gray.jpg",
+      "transformed": "sample_003_transformed_gray_v2.jpg",
+      "background": "gray",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.2307891845703125,
+      "variation": 2
+    },
+    {
+      "index": 3,
+      "original": "sample_003_original_gray.jpg",
+      "transformed": "sample_003_transformed_gray_v3.jpg",
+      "background": "gray",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.2701282501220703,
+      "variation": 3
+    },
+    {
+      "index": 4,
+      "original": "sample_004_original_gradient.jpg",
+      "transformed": "sample_004_transformed_gradient_v1.jpg",
+      "background": "gradient",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.16999244689941406,
+      "variation": 1
+    },
+    {
+      "index": 4,
+      "original": "sample_004_original_gradient.jpg",
+      "transformed": "sample_004_transformed_gradient_v2.jpg",
+      "background": "gradient",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.2639293670654297,
+      "variation": 2
+    },
+    {
+      "index": 4,
+      "original": "sample_004_original_gradient.jpg",
+      "transformed": "sample_004_transformed_gradient_v3.jpg",
+      "background": "gradient",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.16617774963378906,
+      "variation": 3
+    },
+    {
+      "index": 5,
+      "original": "sample_005_original_grid.jpg",
+      "transformed": "sample_005_transformed_grid_v1.jpg",
+      "background": "grid",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.4210472106933594,
+      "variation": 1
+    },
+    {
+      "index": 5,
+      "original": "sample_005_original_grid.jpg",
+      "transformed": "sample_005_transformed_grid_v2.jpg",
+      "background": "grid",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.22292137145996094,
+      "variation": 2
+    },
+    {
+      "index": 5,
+      "original": "sample_005_original_grid.jpg",
+      "transformed": "sample_005_transformed_grid_v3.jpg",
+      "background": "grid",
+      "config": "Mix blend (triangles)",
+      "object_counts": {
+        "blue_triangle": 3,
+        "yellow_rectangle": 1
+      },
+      "blend_mode": "mix",
+      "scale_range": [
+        0.5,
+        1.5
+      ],
+      "transform_time_ms": 0.27489662170410156,
+      "variation": 3
+    }
+  ]
+}

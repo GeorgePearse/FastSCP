@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastSCP Transformation Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        h1 { color: #333; }
+        .overview { margin: 20px 0; text-align: center; }
+        .overview img { max-width: 100%; border: 2px solid #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .sample-group { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .sample-header { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #444; }
+        .metadata { background: #f8f8f8; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; }
+        .images { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .image-container { text-align: center; }
+        .image-container img { max-width: 300px; border: 1px solid #ddd; border-radius: 4px; }
+        .image-label { margin-top: 5px; font-size: 12px; color: #666; }
+        .performance { color: #4CAF50; font-weight: bold; }
+        .stats { background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>FastSCP Transformation Viewer</h1>
+    
+    <div class="overview">
+        <h2>Transformation Overview</h2>
+        <img src="transformation_samples/transformation_grid.jpg" alt="Transformation Grid">
+        
+        <h2>Before/After Comparisons</h2>
+        <img src="transformation_samples/before_after_comparisons.jpg" alt="Before/After Comparisons">
+    </div>
+    
+    <div class="stats">
+        <h3>Performance Statistics</h3>
+        <p>Average transformation time: <span class="performance">0.31 ms</span></p>
+        <p>Total samples generated: 18</p>
+        <p>Created: 2025-06-13T17:31:10.435608</p>
+    </div>
+    
+    <h2>Individual Samples</h2>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic (2 red, 1 green) - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 1<br>
+            <strong>Blend Mode:</strong> overlay<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_000_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_000_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.85 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_000_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.20 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_000_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.34 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic (2 red, 1 green) - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 1<br>
+            <strong>Blend Mode:</strong> overlay<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_001_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_001_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.18 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_001_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.29 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_001_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.17 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic (2 red, 1 green) - grid background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 1<br>
+            <strong>Blend Mode:</strong> overlay<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_002_original_grid.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_002_transformed_grid_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.33 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_002_transformed_grid_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.29 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_002_transformed_grid_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.14 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mix blend (triangles) - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> blue_triangle: 3, yellow_rectangle: 1<br>
+            <strong>Blend Mode:</strong> mix<br>
+            <strong>Scale Range:</strong> [0.5, 1.5]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_003_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_003_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.68 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_003_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.23 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_003_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.27 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mix blend (triangles) - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> blue_triangle: 3, yellow_rectangle: 1<br>
+            <strong>Blend Mode:</strong> mix<br>
+            <strong>Scale Range:</strong> [0.5, 1.5]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_004_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_004_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.17 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_004_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.26 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_004_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.17 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mix blend (triangles) - grid background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> blue_triangle: 3, yellow_rectangle: 1<br>
+            <strong>Blend Mode:</strong> mix<br>
+            <strong>Scale Range:</strong> [0.5, 1.5]<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="transformation_samples/sample_005_original_grid.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_005_transformed_grid_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (0.42 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_005_transformed_grid_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (0.22 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="transformation_samples/sample_005_transformed_grid_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (0.27 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastSCP Precise Shapes Transformation Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        h1 { color: #333; }
+        .overview { margin: 20px 0; text-align: center; }
+        .overview img { max-width: 100%; border: 2px solid #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .sample-group { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .sample-header { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #444; }
+        .metadata { background: #f8f8f8; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; }
+        .images { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .image-container { text-align: center; }
+        .image-container img { max-width: 300px; border: 1px solid #ddd; border-radius: 4px; }
+        .image-label { margin-top: 5px; font-size: 12px; color: #666; }
+        .performance { color: #4CAF50; font-weight: bold; }
+        .stats { background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .feature { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>FastSCP Precise Shapes Transformation Viewer</h1>
+    
+    <div class="feature">
+        <h3>✨ Using Precise Segmentation Masks</h3>
+        <p>This visualization shows transformations using exact shape boundaries (not rectangular bounding boxes).
+        Notice the clean edges, rotation support, and lack of background artifacts!</p>
+    </div>
+    
+    <div class="overview">
+        <h2>Transformation Overview</h2>
+        <img src="precise_transformation_samples/transformation_grid.jpg" alt="Transformation Grid">
+        
+        <h2>Before/After Comparisons</h2>
+        <img src="precise_transformation_samples/before_after_comparisons.jpg" alt="Before/After Comparisons">
+    </div>
+    
+    <div class="stats">
+        <h3>Performance Statistics</h3>
+        <p>Average transformation time: <span class="performance">8.84 ms</span></p>
+        <p>Total samples generated: 45</p>
+        <p>Created: 2025-06-13T17:41:42.513377</p>
+    </div>
+    
+    <h2>Individual Samples</h2>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic No Rotation - white background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 2, blue_triangle: 1<br>
+            <strong>Rotation:</strong> ±0°<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_000_original_white.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_000_transformed_white_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (35.88 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_000_transformed_white_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (9.26 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_000_transformed_white_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (4.08 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">With Rotation - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 2, cyan_hexagon: 2, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±45°<br>
+            <strong>Scale Range:</strong> [0.6, 1.4]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_001_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_001_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (12.22 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_001_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (7.98 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_001_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (5.98 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Many Small - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 3, green_circle: 3, blue_triangle: 2<br>
+            <strong>Rotation:</strong> ±30°<br>
+            <strong>Scale Range:</strong> [0.3, 0.6]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_002_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_002_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (14.64 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_002_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (9.14 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_002_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (5.40 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Few Large - pattern background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 1, cyan_hexagon: 1, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±15°<br>
+            <strong>Scale Range:</strong> [1.5, 2.5]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_003_original_pattern.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_003_transformed_pattern_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (7.59 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_003_transformed_pattern_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (6.78 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_003_transformed_pattern_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (2.27 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mixed Sizes - white background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 1, green_circle: 2, blue_triangle: 1, purple_star: 1<br>
+            <strong>Rotation:</strong> ±20°<br>
+            <strong>Scale Range:</strong> [0.5, 1.8]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_004_original_white.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_004_transformed_white_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (11.43 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_004_transformed_white_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (7.00 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_004_transformed_white_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (11.30 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic No Rotation - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 2, blue_triangle: 1<br>
+            <strong>Rotation:</strong> ±0°<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_005_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_005_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (9.60 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_005_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (7.95 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_005_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (7.80 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">With Rotation - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 2, cyan_hexagon: 2, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±45°<br>
+            <strong>Scale Range:</strong> [0.6, 1.4]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_006_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_006_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (10.34 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_006_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (3.56 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_006_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (7.58 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Many Small - pattern background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 3, green_circle: 3, blue_triangle: 2<br>
+            <strong>Rotation:</strong> ±30°<br>
+            <strong>Scale Range:</strong> [0.3, 0.6]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_007_original_pattern.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_007_transformed_pattern_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (15.16 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_007_transformed_pattern_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (5.83 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_007_transformed_pattern_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (7.74 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Few Large - white background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 1, cyan_hexagon: 1, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±15°<br>
+            <strong>Scale Range:</strong> [1.5, 2.5]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_008_original_white.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_008_transformed_white_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (6.93 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_008_transformed_white_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (5.94 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_008_transformed_white_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (2.79 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mixed Sizes - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 1, green_circle: 2, blue_triangle: 1, purple_star: 1<br>
+            <strong>Rotation:</strong> ±20°<br>
+            <strong>Scale Range:</strong> [0.5, 1.8]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_009_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_009_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (11.36 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_009_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (11.63 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_009_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (5.67 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Basic No Rotation - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 2, green_circle: 2, blue_triangle: 1<br>
+            <strong>Rotation:</strong> ±0°<br>
+            <strong>Scale Range:</strong> [0.8, 1.2]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_010_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_010_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (9.63 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_010_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (7.09 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_010_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (7.07 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">With Rotation - pattern background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 2, cyan_hexagon: 2, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±45°<br>
+            <strong>Scale Range:</strong> [0.6, 1.4]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_011_original_pattern.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_011_transformed_pattern_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (10.94 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_011_transformed_pattern_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (7.67 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_011_transformed_pattern_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (7.26 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Many Small - white background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 3, green_circle: 3, blue_triangle: 2<br>
+            <strong>Rotation:</strong> ±30°<br>
+            <strong>Scale Range:</strong> [0.3, 0.6]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_012_original_white.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_012_transformed_white_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (15.81 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_012_transformed_white_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (11.39 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_012_transformed_white_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (2.42 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Few Large - gray background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> purple_star: 1, cyan_hexagon: 1, yellow_diamond: 1<br>
+            <strong>Rotation:</strong> ±15°<br>
+            <strong>Scale Range:</strong> [1.5, 2.5]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_013_original_gray.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_013_transformed_gray_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (7.76 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_013_transformed_gray_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (4.24 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_013_transformed_gray_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (4.89 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sample-group">
+        <div class="sample-header">Mixed Sizes - gradient background</div>
+        <div class="metadata">
+            <strong>Objects:</strong> red_square: 1, green_circle: 2, blue_triangle: 1, purple_star: 1<br>
+            <strong>Rotation:</strong> ±20°<br>
+            <strong>Scale Range:</strong> [0.5, 1.8]<br>
+            <strong>Blend Mode:</strong> alpha (smooth edges)<br>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_014_original_gradient.jpg" alt="Original">
+                <div class="image-label">Original</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_014_transformed_gradient_v1.jpg" alt="Transformed">
+                <div class="image-label">Variant 1 (12.62 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_014_transformed_gradient_v2.jpg" alt="Transformed">
+                <div class="image-label">Variant 2 (8.81 ms)</div>
+            </div>
+
+            <div class="image-container">
+                <img src="precise_transformation_samples/images/sample_014_transformed_gradient_v3.jpg" alt="Transformed">
+                <div class="image-label">Variant 3 (9.42 ms)</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
