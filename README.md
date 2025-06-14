@@ -169,6 +169,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 MIT License
 
+## Related Projects
+
+- [copy-paste-aug](https://github.com/conradry/copy-paste-aug) - Another implementation of copy-paste augmentation for instance segmentation
+
 ## Acknowledgments
 
 Built to work seamlessly with:
