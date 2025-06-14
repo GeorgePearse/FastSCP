@@ -29,11 +29,12 @@ pip install -e .
 ## Quick Start
 
 ```python
-from fastscp import SimpleCopyPasteSegmented
+from fastscp import SimpleCopyPaste
 
 # Create transform with segmentation support
-transform = SimpleCopyPasteSegmented(
+transform = SimpleCopyPaste(
     coco_file="path/to/annotations_with_segmentation.json",
+    image_dir="path/to/images",  # Directory containing source images
     object_counts={"cat": 2, "dog": 1},
     rotation_range=45,      # ±45 degrees rotation
     blend_mode="alpha",     # Smooth edge blending
@@ -59,12 +60,13 @@ augmented = transform(image=image)["image"]
 
 ```python
 import albumentations as A
-from fastscp import SimpleCopyPasteSegmented
+from fastscp import SimpleCopyPaste
 
 pipeline = A.Compose([
     A.RandomBrightnessContrast(p=0.2),
-    SimpleCopyPasteSegmented(
+    SimpleCopyPaste(
         coco_file="annotations.json",
+        image_dir="path/to/images",
         object_counts={"object": 3},
         rotation_range=30,
         p=0.8
@@ -152,8 +154,8 @@ pytest --cov=fastscp
 ```
 FastSCP/
 ├── fastscp/
-│   ├── transforms_segmented.py  # Segmentation based transform
-│   └── coco_loader_segmented.py # Segmentation-aware loader
+│   ├── transforms.py  # Segmentation based transform
+│   └── coco_loader.py # Segmentation-aware loader
 ├── tests/
 │   ├── create_precise_shapes.py # Generate test data with masks
 │   └── test_*.py               # Unit tests
